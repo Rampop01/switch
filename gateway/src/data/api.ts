@@ -1780,6 +1780,9 @@ export interface ReferenceDetail {
   // Resolved server-side and unfiltered by the type's visibility. Null when
   // the slug resolves to no type at all.
   type_display_name: string | null;
+  // Whether the viewer may open its page. A package's or a room's list names
+  // a private item to everyone who may read the package or room.
+  can_read: boolean;
 }
 
 export interface ReferenceCreateInput {
@@ -1820,6 +1823,8 @@ export interface DocumentSummary {
   created_by_agent_id: string | null;
   created_by_agent_name: string | null;
   created_at: string;
+  // As on `ReferenceDetail`.
+  can_read: boolean;
 }
 
 export interface DocumentDetail extends DocumentSummary {
